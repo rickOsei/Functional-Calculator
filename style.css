@@ -13,7 +13,7 @@
 
   width: 100%;
   height: 100vh;
-  background: white;
+  background: linear-gradient(120deg, rgb(121, 121, 121), rgb(220, 218, 218));
 }
 
 .container {
@@ -21,7 +21,7 @@
   height: auto;
   border: none;
   border-radius: 35px;
-  box-shadow: 5px 5px 10px 3px rgba(35, 35, 35, 0.693);
+  box-shadow: 3px 3px 5px 2px rgba(126, 126, 126, 0.373);
   padding: 25px 15px;
   background: #eceeef;
 }

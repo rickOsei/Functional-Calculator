@@ -30,6 +30,10 @@ class Calculator {
     this.currentOperand = "";
   }
 
+  percentage() {
+    this.currentOperand = this.currentOperand / 100;
+  }
+
   compute() {
     let computation;
     const prev = parseFloat(this.previousOperand);
@@ -129,6 +133,11 @@ operationButtons.forEach((button) => {
   });
 });
 
+percentageButton.addEventListener("click", () => {
+  calculator.percentage();
+  calculator.updateDisplay();
+});
+
 equalButton.addEventListener("click", () => {
   calculator.compute();
   calculator.updateDisplay();
@@ -143,3 +152,13 @@ deleteButton.addEventListener("click", () => {
   calculator.delete();
   calculator.updateDisplay();
 });
+
+document.body.addEventListener("click", (e) => {
+  localStorage.setItem("current", currentOperandTextElement.innerText);
+});
+
+document.body.onload = () => {
+  const current = localStorage.getItem("current");
+  calculator.currentOperand = current;
+  calculator.updateDisplay();
+};
